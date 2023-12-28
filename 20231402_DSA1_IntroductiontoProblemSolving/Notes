@@ -1,0 +1,123 @@
+Lecture Notes : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/028/061/original/Introduction_to_Problem_Solving__E_.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20231221%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20231221T051356Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=754b96f30560505e2e4c59b690fd578e26bb91cc80209d8a96116325b6df24cd
+
+
+Q1. Count of factor : Any nu. that divides number completely meaning 0 reminder.
+12 -> 1, 2, 3, 4, 6, 12
+24 -> 1, 2, 3, 4, 6, 8, 12, 24
+10 -> 1, 2, 5, 10
+
+idea: for loop
+number : n (n iterations)
+small factor : 1
+largest factor : n
+
+N numbers           iterations(N)               time
+10^8                    10^8                    1 sec (assumption)
+10^9                    10^9                    ((10^9)*1)10^8 = 10^1 = 10 sec
+10^18                   10^18                   10^(18-8) = 10^10 = sec = 317 Years
+
+// Optimization
+
+i*j=N. i,j both factors of N
+j = N/i => i, N/i factors of N
+24 = 4*6 => i=4, N/i = 24/4 = 6 => 4,6 factors
+
+i           N/i
+1           24/1 = 24 (1, 24 factor)
+2           24/2 = 12 (2, 12 factor)
+3           24/3 = 8 (3, 8 factor)
+4           24/4 = 6 (4, 6 factor)
+------------------------- repetition
+6           24/6 = 4
+8           24/8 = 3
+12          24/12 = 2
+24          24/24 = 1
+
+Total Factors  = 8 and (i<=N/i)
+
+N=100
+i       N/i
+1       100
+2       50
+4       25
+5       20
+10      10
+------------------------- repetition = (i<= N/i) => (i^2 <= N) => i <= sqrt(N)
+20      5
+25      4
+50      2
+100     1
+
+Observation
+1. All factors of N are present in first half.
+2. We are in first half till i<=sqrt(N)
+
+Dry Run N=sqrt(24) = 4
+
+i       count
+1       2 (1, 24)
+2       4 (2, 12)
+3       6 (3, 8)
+4       8 (4, 6)
+5 -> exit for loop as 5 not less than sqrt(24)
+
+
+Q2. Check whether given number is Prime or Not.
+Prime Number : Only 2 Factors, 1 and Number itself => 1, 2, 3, 5, 7, 11 etc.
+
+Q3. Reverse an Array without an extra space.
+Ex1.
+a = [10, 20, 30, 40, 50]
+
+index s     index e
+0           4           -> swap -> [50, 20, 30, 40, 10]
+1           3           -> swap -> [50, 40, 30, 20, 10]
+2           2           -> s==e -> Not require swap
+
+
+Ex.2
+a = [10, 20, 30, 40, 50, 60]
+
+index s     index e
+0           5           -> swap -> [60, 20, 30, 40, 50, 10]
+1           4           -> swap -> [60, 50, 30, 40, 20, 10]
+2           3           -> swap -> [60, 50, 40, 30, 20, 10]
+
+so swap till -> while(s<e)
+
+
+Q4.
+Reverse Part of an Array
+A = [10 20 19 14 50 60 80 12] s=2 e=5
+
+Q5: Given an Array rotate it K times from last to first. [Google, Amazon].
+-> Don't create extra Array
+-> Do it efficiently
+
+Ex1. 10 20 30 40 50 k=3
+rotate 1 => 50 1- 20 30 40
+rotate 2 => 40 50 10 20 30
+rotate 3 => 30 40 50 10 20
+
+
+Ex2. 19 18 16 48 36 44 39 k=4
+rotate 1 => 39 19 18 16 48 36 44
+rotate 2 => 44 39 19 18 16 48 36
+rotate 3 => 36 44 39 19 18 16 48
+rotate 4 => 48 36 44 39 19 18 16
+
+Steps:
+1. Reverse Entire Array
+2. Reverse first k element, 0 to (k-1)
+3. Reverse remaining elements, k to (arr.length-1)
+
+BUT if k > arr.length =>
+Rotate output is same for
+ex1.
+k       10 20 30 40
+1st ->  40 10 20 30
+2nd ->  30 40 10 20
+3rd ->  20 30 40 10
+4th ->  10 20 30 40 same as 0th rotation
+
+if k > arr.length, k = k%arr.length => k=7 => 7%4=3

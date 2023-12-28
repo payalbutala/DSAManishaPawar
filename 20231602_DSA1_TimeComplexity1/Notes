@@ -1,0 +1,201 @@
+Lecture Notes : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/028/262/original/Time_Complexity_1__E_.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20231228%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T105530Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=895b67e56f7f498ddf7fb22bbb6a9a2a3162afa661910809e5d3d56e20801aca
+
+// How to calculate total number if Iterations.
+
+1. Sum of N natural Numbers: (N*(N+1))/2    =========================================> FORMULA
+2. [ -> Inclusive , ( -> Exclusive
+[3, 5] => 3, 4, 5 = 3 numbers
+[0, 4] => 0, 1, 2, 3, 4 = 5 Numbers
+[a, b] => b-a+1     =========================================> FORMULA
+[4, 7] => 7-4+1 = 4
+
+2. Geometric Progression
+3 6 12 24 48 -> number*2 -> Next Number
+4 7 10 13 19 -> Not a GP
+2 4 8 16 32 -> number*2 -> Next Number
+4 16 64 256 -> Number*4 -> Next Number
+
+First Term = a
+Common Ratio = r
+Term -> Number
+1 -> a
+2 -> ar
+3 -> ar^2
+4 -> ar^3
+5 -> ar^4
+6 -> ar^5
+7 -> ar^6
+.
+.
+.
+.
+n => ar^n-1     ========================================== FORMULA
+
+
+SUM OF n TERMS OF GEOMETRIC PROGRESSION = a((r^n) - 1)/(r-1) ============================ Formula
+
+5   20  80  320 1280
+First Term = a
+Common Ratio = r
+Total numbers = n
+a=5, r=4, n=5
+
+Sum using GP formula : 5(4^5 -1)/(4-1) = 5*1023/3 = 1705
+QUIZ
+Q3. How many iterations will be there in this loop
+    for(i=0; i<=100; i++){ ...}
+
+    [0, 100] = b-a+1 = 100-0+1 = 101 => Answer = 101
+
+Q4. How many iterations will be there in this loop
+    for(i=3; i<=50; i++)
+    { S=S+i; }
+
+    ANSWER : [3, 50] = b-a+1 = 50-3+1 = 48
+
+Q5. How many iterations will be there in this loop
+    for(i=1; i<=N; i++)
+    { S=S+i; }
+
+    ANSWER : [1, N] => b-a+1 => N-1+1 = N
+
+Q. How many iterations will be there in this loop
+    for(i=1; i<=N; i++)
+    { S=S+i; }
+    for(i=1; i<=M; i++)
+        { S=S+i; }
+
+    ANSWER : [1, N] and [1, M] => N + M
+
+Q6. How many iterations will be there in this loop
+    for(i=1; i*i <= N; i++){...}
+
+    ANSWER : i^2 = N => sqrt of both sides = i = sqrt(N) [i, sqrt(N)] = sqrt(N)
+
+Q7. How many iterations will be there in this loop, given N>0
+    i=N;
+    while(i>1) {
+       i=i/2;
+    }
+
+    if i=32
+    ANSWER : N/2, N/4, N/8, N/16, N/32 -> power of 2 series
+        assuming loop break after k iterations : N/2^k=1 (as when i=1 loop breaks)
+        => N = 2^k => taking log both sides => log N = log2^k (log 2^k =  k as log 2  with base 2 = 1)
+        ANSWER => log N = k
+
+Q8. How many iterations will be there in this loop
+        for(i=0; i<=N; i = i*2){ ...}
+    ANSWER = Infinite as i value is always 0
+
+Q9. How many iterations will be there in this loop
+    for(i=1; i<N; i=i*2){ ...}
+    ANSWER = log(N)
+
+    1 => 2
+    2 => 4
+    4 => 8
+    8 => 16
+    16 => 32
+    N => 2^N -> power of 2 series
+                    assuming loop break after k iterations : 2^k=N (as when i=N loop breaks)
+                    => N = 2^k => taking log both sides => log N = log2^k (log 2^k =  k as log 2 with base 2 = 1)
+                    ANSWER => log N = k
+
+NESTED LOOPS:
+
+Q10. How many iterations will be there in this loop
+     for(i=1; i<=3; i++){
+     for(j=1; j<=4; j++){
+     print("Hi")
+     }
+     }
+
+     ANSWER : 3*4 = 12
+
+     i  j   iterations
+     1  1-4     4
+     2  1-4     4
+     3  1-4     4
+                12
+
+Q11. How many iterations will be there in this loop
+     for(i=1; i<=10; i++){
+     for(j=1; j<=N; j++){
+     / ......../
+     }
+     }
+
+     ANSWER : 10*N
+
+Q12. How many iterations will be there in this loop
+     for(i=1; i<=N; i++){
+          for(j=1; j<=N; j++){
+          ...
+          }
+     }
+
+     ANSWER : N*N
+
+Q13. How many iterations will be there in this loop
+    for(i=1; i <= N; i++){
+    for(j=1; j < N; j = j*2){
+    ...
+    }
+    }
+
+    ANSWER : N * logN
+
+Q14. How many iterations will be there in this loop
+     for(i=0; i<N; i++){
+     for(j=0; j<=i; j++){
+     ...
+     }
+     }
+
+     ANSWER :
+
+     i  j   iterations
+     0  0-0     1
+     1  0-1     2
+     2  0-2     3
+     3  0-3     4
+     4  0-4     5
+   N-1 0-(N-1)  N
+                N*(N+1)/2
+
+
+Q. void function(int N){
+    for(int i=1; i<=N; i++) {
+        for(j=1; j<=2^i; j++) {
+            println(i + " " + j);
+        }
+    }
+}
+
+     ANSWER :
+
+     i  j   iterations
+     1  1-2     2^1
+     2  1-4     2^2
+     3  1-8     2^3
+     4  1-16    2^4
+     N  1-2^N   2^N
+
+     iteration series = 2, 4, 8, 16, 64, 2^N
+
+     a = 2
+     r = 2
+     n = N
+
+     GP = sum of t terms = a((r^n) - 1)/(r-1) = 2 ((2^N)-1)
+
+Comparing Terms :
+log N < sqrt(N) < N < N log N < N sqrt(N) < N^2 < 2^N =========================== VIMP
+
+* How to Find Big O :
+1. Fins total number of Iterations.
+2. Discard lower order terms, keep highest order terms.
+3. Discard constant coefficients.
+
+Note : When number of iterations are constant (independent of N) => Big (O) = 1.
