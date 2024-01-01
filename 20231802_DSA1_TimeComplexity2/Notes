@@ -1,0 +1,30 @@
+Lecture Notes : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/028/538/original/Time_complexity_2__E_.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20231228%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T193409Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=08c2977098504987c7a760b935575c4bac65f3abeec6c6ae4c37e0f78aad62e4
+
+Comparing 2 Algorithm
+    1. Using execution time
+    2. using iteration and graphs
+
+Why Big O needed?
+    1. Why lower order terms are neglected
+    2. Why constant coefficients are neglected
+    3. Issues with Big O
+    4. Worst case scenario
+
+Space Complexity
+
+Time Limit Exceeded
+
+1. Comparing Algorithm using Execution Time :
+Conclusion : Comparing 1 Algorithm based on Execution Time is not Correct as Execution Time is depends on lot of external factors.
+    1. Machine that you are using.
+    2. Processing power that you are using.
+    3. code language written (c++ vs python - c++ is very faster).
+    4. Environmental condition (Like more temperature slower PC).
+
+2. Comparison based on Iterations (eg. for loop):
+Check white small sprial binding book notes. Its theory.
+
+How to find Big O?
+1. For very high value of N, contribution of lower oder term in total is very very less, that's why we can neglect lower order terms.
+2. For large input size, constant coefficient won't play a significant role.
+3. Issues with Big O : If both algorithm has same higher order of terms Big(O) can't compare correctly.

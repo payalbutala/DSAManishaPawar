@@ -194,8 +194,12 @@ Comparing Terms :
 log N < sqrt(N) < N < N log N < N sqrt(N) < N^2 < 2^N =========================== VIMP
 
 * How to Find Big O :
-1. Fins total number of Iterations.
+1. Find total number of Iterations.
 2. Discard lower order terms, keep highest order terms.
 3. Discard constant coefficients.
 
 Note : When number of iterations are constant (independent of N) => Big (O) = 1.
+
+IMP ===============================
+1 2 4 8 16 32 64 128 -> log N -> TC
+N N/2 N/4 N/8 N/16 N/32 -> log N -> TC
