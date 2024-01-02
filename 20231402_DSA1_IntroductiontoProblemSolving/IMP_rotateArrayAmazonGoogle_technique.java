@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class IMP_rotateArrayAmazonGoogle {
+public class IMP_rotateArrayAmazonGoogle_technique {
 
     public static int[] reverseArray(int[] arr, int s, int e){
         while(s<e){

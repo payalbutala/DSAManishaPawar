@@ -1,0 +1,8 @@
+Sub Array : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/029/305/original/Beg_DSA_Subarrays.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20240102%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240102T080702Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=00dc87461ff936941f4aacf3c11f550a60ddd0ac365131beb8d7b46fe3ebbfc9
+
+sub-array : Continuous part of an Array is considered as Sub-Array.
+- single Element is also a Sub-Array.
+- complete Array is also Sub-Array.
+- Sub-Array is traverse only from Left-Right.
+
+Total SubArray = N * (N+1) / 2
