@@ -1,7 +1,16 @@
 Prefix Sum : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/029/053/original/DSA_Prefix_Sum.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20240101%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240101T110723Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=af129ffc7a8cd7795534a7d777edd08ecca2b96fa581b6a83193a8a009ea7833
 
+Prefix Sum : Useful for Range Queries.
+
 Prefix sum formula : prefSum[i] = prefSum[i - 1] + A[i] =========================== TC for N Natural Numbers = O(N)
 
 Sum of [L - R] =>
     if L == 0 => psum(R)
         else psum(R) - psum (L-1)
+
+Issues in PrefixSum like Why we don't modify given array to create prefixSum/cumulative sum.
+1. Given array is Integer & pf can be Long as array element can be 10^9 and its sum will be > 10^9 like it can be 10^14 which is Long.
+Both Integer & Long is not same, not possible to modify given array. Even we can't typecast as Long to Integer can be overflow.
+
+The equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
+

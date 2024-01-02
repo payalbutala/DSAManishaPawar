@@ -44,8 +44,51 @@ The sum of all elements of A[1 ... 2] = 2 + 2 = 4.
 
 * */
 
-public class rangeSum {
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class rangeSum {
+        public ArrayList<Long> rangeSum(ArrayList<Integer> A, ArrayList<ArrayList<Integer>> B) {
+            return rangeSumOfIndexes(A, B);
+        }
+
+        public static ArrayList<Long> rangeSumOfIndexes(ArrayList<Integer> A, ArrayList<ArrayList<Integer>> B){
+            ArrayList<Long> sum = new ArrayList<>();
+            ArrayList<Long> pf = new ArrayList<>();
+            pf.add(Long.valueOf(A.get(0)));
+
+            for(int i=1; i<A.size(); i++){
+                pf.add(Long.valueOf(pf.get(i-1) + A.get(i)));
+            }
+
+            for(int j=0; j<B.size();j++){
+                int s = B.get(j).get(0);
+                int e = B.get(j).get(1);
+
+                long tot = (s == 0) ? pf.get(e) : pf.get(e) - pf.get(s-1);
+                sum.add(tot);
+            }
+
+            return sum;
+        }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Array Length : ");
+        int len = sc.nextInt();
+        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> queryArr = new ArrayList<ArrayList<Integer>>();
+        System.out.println("Enter Queries Length : ");
+        int queries = sc.nextInt();
+
+        for(int i=0; i<len; i++){
+            arr.add(sc.nextInt());
+        }
+
+        for(int j=0; j<queries; j++){
+//            queryArr.add(j, sc.nextInteger()); Need to accept input as a form in 2DArrayList. Only this part is pending rest code is working well in scaler.
+        }
     }
 }
+// TC : O(N + Q)
+// SC : O(N)
