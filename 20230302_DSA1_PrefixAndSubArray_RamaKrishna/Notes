@@ -1,0 +1,10 @@
+Prefix & SubArrays : https://scaler-production-new.s3.ap-southeast-1.amazonaws.com/attachments/attachments/000/029/870/original/DSA_Prefix___Subarrays.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIDNNIRGHAQUQRWYA%2F20240102%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240102T184756Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cab1d41a06cde180302d247ea04e17b784507f1f87b7fedfc83733a14332b06b
+
+Q1. Max Sum Contiguous Subarray : Find the maximum sum of contiguous non-empty subarray within an array A of length N.
+Idea : Generate all subarray sum & get max of them.
+    a. using 3 loops TC : O(N^3) SC : O(N)
+    b. optimized psum : TC : O(N^2) SC : O(N)
+    c. cumulative : TC : O(N^2) SC:O(1)
+
+    all +ve elements : max subarray = sum of all array elements.
+    all -ve elements : max subarray = a single element which is greater -1 or -2 ....

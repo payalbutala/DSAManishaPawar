@@ -8,7 +8,7 @@ Why Big O needed?
     1. Why lower order terms are neglected
     2. Why constant coefficients are neglected
     3. Issues with Big O
-    4. Worst case scenario
+    4. Worst case scenario 
 
 Space Complexity
 
