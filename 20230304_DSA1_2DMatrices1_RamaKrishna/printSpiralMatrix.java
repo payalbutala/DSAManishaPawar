@@ -1,12 +1,5 @@
 /*
 * Q3. Spiral matrix 2
-Solved
-feature icon
-Get your doubts resolved blazing fast with Chat GPT Help
-Check Chat GPT
-feature icon
-Using hints is now penalty free
-Use Hint
 Problem Description
 Given an integer matrix A of size NxN. Print the matrix in spiral form starting from A[0][0] in the first row.
 For example : Given matrix of 2x2

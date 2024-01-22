@@ -1,0 +1,9 @@
+To find sub-matrix we need
+1. top-left & bottom-right OR
+2. top-right & bottom-left
+
+Given 2d Matrix :
+Find Prefix Sum of 2D Array = Prefix-Sum of Every Row + Prefix-Sum of Every Column. //  TC = O(N*M) + O(N*M) = O(N*M)
+                                OR
+                              Prefix-Sum of Every Column + Prefix-Sum of Every Row. //  TC = O(M*N) + O(M*N) = O(M*N)
+

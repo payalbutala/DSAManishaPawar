@@ -101,3 +101,5 @@ public class findElementInSortedMatrix {
         System.out.println(findInMatrix(A, B));
     }
 }
+// TC : O(N+M)
+// SC : O(1)
